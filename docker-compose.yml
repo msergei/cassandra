@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  srv:
+    image: cassandra
+    ports:
+      - 7000:7000/tcp
+      - 7001:7001/tcp
+      - 7199:7199/tcp
+      - 9042:9042/tcp
+      - 9160:9160/tcp
+    volumes:
+      - ~/cassandra_data:/var/lib/cassandra
+    restart: unless-stopped
+    environment:
+      CASSANDRA_CLUSTER_NAME: Creative Approval Cluster
